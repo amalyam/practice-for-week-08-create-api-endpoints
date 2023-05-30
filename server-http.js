@@ -103,10 +103,10 @@ const server = http.createServer((req, res) => {
     ) {
       const urlParts = req.url.split("/");
       if (urlParts.length === 3) {
-        const dogId = urlParts[2];
+        const dogId = Number(urlParts[2]);
         // Your code here
         const { name, age } = req.body;
-        let editDog = dogs.find((dog) => dog.dogId == dogId);
+        let editDog = dogs.find((dog) => dog.dogId === dogId);
 
         editDog.name = name;
         editDog.age = age;

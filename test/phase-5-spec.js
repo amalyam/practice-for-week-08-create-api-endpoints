@@ -11,7 +11,7 @@ describe("Phase #5 Specs: DELETE /dogs/:dogId", () => {
     await chai
       .request(server)
       .post("/dogs")
-      .set("content-type", "application/json")
+      .set("content-type", "application/json; charset=utf-8")
       .send(newDogBody4);
   });
 

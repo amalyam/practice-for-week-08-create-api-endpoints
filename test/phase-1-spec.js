@@ -12,12 +12,14 @@ describe("Phase #1 Specs: GET /dogs", () => {
       .request(server)
       .get("/dogs")
       .then((res) => {
-          expect(res).to.have.status(200);
-          expect(res).to.be.json;
-          expect(res.header['content-type']).to.equal('application/json');
-          expect(res.body[0].dogId).to.equal(dogs[0].dogId);
-          expect(res.body[0].name).to.equal(dogs[0].name);
-          expect(res.body[0].age).to.equal(dogs[0].age);
+        expect(res).to.have.status(200);
+        expect(res).to.be.json;
+        expect(res.header["content-type"]).to.equal(
+          "application/json; charset=utf-8"
+        );
+        expect(res.body[0].dogId).to.equal(dogs[0].dogId);
+        expect(res.body[0].name).to.equal(dogs[0].name);
+        expect(res.body[0].age).to.equal(dogs[0].age);
       });
   });
 });
